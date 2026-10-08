@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coffee Shop</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f1e7;
+            color: #422719;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #422719;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #home {
+            background-color: #6f4228;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        #home h1 {
+            font-size: 40px;
+        }
+
+        button {
+            background-color: #c58b54;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .coffee {
+            background-color: white;
+            padding: 15px;
+            width: 223px;
+            border-radius: 8px;
+        }
+
+        .coffee img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Coffee Shop Website</h2>
+        <nav>
+            <a href="#home">Home</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Good Coffee, Better Days</h1>
+        <p>
+            Enjoy the perfect blend of rich flavors and fresh aromas.<br>
+            Every cup is crafted with love to make your day warmer,<br>
+            happier, and more special.
+        </p>
+        <button onclick="showMessage()">Welcome</button>
+    </section>
+
+    <section id="menu">
+        <h2>Our Coffee Menu</h2>
+        <p>Simple. Fresh. Delicious.</p>
+
+        <div class="menu-container">
+
+            <div class="coffee">
+                <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400" alt="Espresso coffee">
+                <h3>Espresso</h3>
+                <p>Strong and rich coffee.</p>
+                <b>₹80</b><br>
+                <button onclick="orderCoffee('Espresso', 80)">Order Now</button>
+            </div>
+
+            <div class="coffee">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Latte coffee">
+                <h3>Latte</h3>
+                <p>Smooth coffee with steamed milk.</p>
+                <b>₹120</b><br>
+                <button onclick="orderCoffee('Latte', 120)">Order Now</button>
+            </div>
+
+            <div class="coffee">
+                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=400" alt="Cappuccino coffee">
+                <h3>Cappuccino</h3>
+                <p>Coffee topped with creamy foam.</p>
+                <b>₹120</b><br>
+                <button onclick="orderCoffee('Cappuccino', 120)">Order Now</button>
+            </div>
+
+            <div class="coffee">
+                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400" alt="Iced coffee">
+                <h3>Iced Coffee</h3>
+                <p>Cold and refreshing coffee.</p>
+                <b>₹100</b><br>
+                <button onclick="orderCoffee('Iced Coffee', 100)">Order Now</button>
+            </div>
+
+            <div class="coffee">
+                <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400" alt="Mocha drink">
+                <h3>Mocha</h3>
+                <p>A tasty mix of coffee and chocolate.</p>
+                <b>₹140</b><br>
+                <button onclick="orderCoffee('Mocha', 140)">Order Now</button>
+            </div>
+
+        </div>
+        <h2> Coffee Price Calculator </h2>
+        <p>Select your coffee:</p>
+        <select id="coffeeSelect" onchange="calculatePrice()">
+            <option value="80">Espresso - ₹80</option>
+            <option value="120">Latte - ₹120</option>
+            <option value="120">Cappuccino - ₹120</option>
+            <option value="100">Iced Coffee - ₹100</option>
+            <option value="140">Mocha - ₹140</option>
+        </select>
+
+        <p id="totalPrice">Total Price: ₹80</p>
+
+    </section>
+
+    <script>
+        function showMessage() {
+            alert("Welcome to Coffee Shop! Enjoy your coffee.");
+        }
+        function orderCoffee(name, price) {
+            alert("You selected " + name + ". Price: ₹" + price);
+        }
+        function calculatePrice() {
+            var price = document.getElementById("coffeeSelect").value;
+
+            document.getElementById("totalPrice").innerHTML =
+                "Total Price: ₹" + price;
+        }
+    </script>
+
+</body>
+
+</html>
